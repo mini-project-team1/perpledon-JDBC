@@ -36,11 +36,13 @@ public class Member {
             // 조회문 select count(*) from member where membername ='홍길동' -->  0 이면 없어 1 있어
             String query = prop.getProperty("selectOrderMember");
             pstmt = con.prepareStatement(query);
+            System.out.println("=================================");
             System.out.println("회원 검증을 시작합니다.");
             System.out.print("이름을 입력해주세요 : ");
             String mName = sc.nextLine();
             System.out.print("핸드폰 번호를 입력해주세요 : ");
             String mPhone = sc.nextLine();
+            System.out.println("=================================");
             pstmt.setString(1,mName);
             pstmt.setString(2,mPhone);
             rset = pstmt.executeQuery();
@@ -71,7 +73,7 @@ public class Member {
                     burgerView.burgurview();
                 }else{
                     System.out.println("맴버 db 등록에 실패하였습니다.");
-                    chooseListSet();
+                    chooseListSingle();
                 }
             }
 
