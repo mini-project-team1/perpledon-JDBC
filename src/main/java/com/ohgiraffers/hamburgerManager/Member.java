@@ -25,15 +25,11 @@ public class Member {
 
     ResultSet rset = null;
 
-
-
-
-
-
     public void chooseListSingle() {
         Connection con = getConnection();
         PreparedStatement pstmt = null;
         Properties prop = new Properties();
+        ResultSet rset = null;
         int result =0;
         try {
             prop.loadFromXML(new FileInputStream("src/main/java/com/ohgiraffers/mapper/purpledon_query.xml"));
@@ -85,6 +81,7 @@ public class Member {
             e.printStackTrace();
         }finally {
             close(pstmt);
+            close(rset);
             close(con);
         }
 
@@ -95,6 +92,7 @@ public class Member {
         Connection con = getConnection();
         PreparedStatement pstmt = null;
         Properties prop = new Properties();
+        ResultSet rset = null;
         int result =0;
         try {
             prop.loadFromXML(new FileInputStream("src/main/java/com/ohgiraffers/mapper/purpledon_query.xml"));
@@ -147,6 +145,7 @@ public class Member {
             e.printStackTrace();
         }finally {
             close(pstmt);
+            close(rset);
             close(con);
         }
 
