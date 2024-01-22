@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+    <entry key="serchMember">
+        SELECT *
+        FROM order_member
+        WHERE member_name = ?,
+                AND phone = ?
+    </entry>
+
+
+    <entry key="insertOrderMember">
+        INSERT INTO order_member(
+        member_name
+        ,phone
+        )
+        VALUES(
+         ?
+        ,?
+        )
+
+    </entry>
+
+    <entry key="insertOrderBurger">
+        INSERT INTO order_burger(
+        order_code
+        ,hamburger_name
+        )
+        VALUES(
+        ?
+        ,?
+        )
+    </entry>
+
+    <entry key="insertOrderList">
+        INSERT INTO order_list(
+         original_price
+        ,discount_rate
+        ,member_name
+        ,final_price
+        )
+        VALUES(
+         ?
+        ,?
+        ,?
+        ,?
+        )
+    </entry>
+
+    <entry key="insertOrderSet">
+        INSERT INTO order_set(order_code
+                            ,drink_name
+                            ,side_name)
+                  VALUES(       ?
+                                ,?
+                                ,?)
+    </entry>
+    <entry key="selectOrderMember">
+        SELECT *
+        FROM order_member
+        WHERE member_name = ?
+        AND phone =?
+    </entry>
+
+
+</properties>
+
+
+
+
